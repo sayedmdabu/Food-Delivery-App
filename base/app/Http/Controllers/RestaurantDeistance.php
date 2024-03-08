@@ -12,11 +12,8 @@ class RestaurantDeistance extends Controller
 {
     public function deistance(Request $request){
 
-
-        // Get restaurant coordinates
         $restaurant = RestaurantInfo::where('restaurant_id',$request->input('restaurant_id'))->first();
 
-        // dd(RiderInfo::all());
 
         $nearestRiders = RiderInfo::select('*',
                 DB::raw('(6371 * acos(cos(radians(' . $restaurant->lat . '))
@@ -24,11 +21,9 @@ class RestaurantDeistance extends Controller
                 * cos(radians(`long`) - radians(' . $restaurant->long . '))
                 + sin(radians(' . $restaurant->lat . '))
                 * sin(radians(`lat`)))) AS distance'))
-                ->having('distance', '<', 5) // Adjust this value for your distance threshold
+                ->having('distance', '<', 5)
                 ->orderBy('distance')
                 ->get();
-
-        // return $nearestRider;
 
         if ($nearestRiders) {
             return response()->json([
