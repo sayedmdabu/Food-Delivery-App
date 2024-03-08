@@ -24,7 +24,6 @@ class RestaurantDeistance extends Controller
                 * cos(radians(`long`) - radians(' . $restaurant->long . '))
                 + sin(radians(' . $restaurant->lat . '))
                 * sin(radians(`lat`)))) AS distance'))
-                ->where('restaurant_id', $request->input('restaurant_id'))
                 ->having('distance', '<', 5) // Adjust this value for your distance threshold
                 // ->orderBy('distance')
                 ->get();
