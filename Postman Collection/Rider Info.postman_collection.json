@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "6716bde2-5f7e-4afd-bfbb-c64116c974b1",
+		"name": "Rider Info",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31785494",
+		"_collection_link": "https://teamagriculture.postman.co/workspace/Agriculture~0693bffc-9935-4dc3-896d-d8a7ee438fbe/collection/31785494-6716bde2-5f7e-4afd-bfbb-c64116c974b1?action=share&source=collection_link&creator=31785494"
+	},
+	"item": [
+		{
+			"name": "rider-info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "rider_id",
+							"value": "322",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "23.835485",
+							"type": "text"
+						},
+						{
+							"key": "long",
+							"value": "90.365876",
+							"type": "text"
+						},
+						{
+							"key": "capture_time",
+							"value": "2024-03-08 10:23:03",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/v1/rider-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"v1",
+						"rider-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rider-deistance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "restaurant_id",
+							"value": "1001",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8102/api/v1/rider-deistance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"v1",
+						"rider-deistance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

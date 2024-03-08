@@ -25,7 +25,7 @@ class RestaurantDeistance extends Controller
                 + sin(radians(' . $restaurant->lat . '))
                 * sin(radians(`lat`)))) AS distance'))
                 ->having('distance', '<', 5) // Adjust this value for your distance threshold
-                // ->orderBy('distance')
+                ->orderBy('distance')
                 ->get();
 
         // return $nearestRider;
